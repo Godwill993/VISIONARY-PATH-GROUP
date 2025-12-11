@@ -8,8 +8,9 @@
 </head>
 
 <body>
+
   <!-- Theme Toggle Button -->
-  <button class="theme-toggle" onclick="toggleTheme()">🌗</button>
+  <button class="theme-toggle" id="themeBtn">🌙</button>
 
   <!-- Navigation -->
   <header class="navbar">
@@ -30,9 +31,15 @@
   </section>
 
   <script>
+    const themeBtn = document.getElementById("themeBtn");
+
     function toggleTheme() {
-      document.documentElement.classList.toggle("dark");
+      const isDark = document.documentElement.classList.toggle("dark");
+      themeBtn.textContent = isDark ? "☀️" : "🌙";
     }
+
+    themeBtn.addEventListener("click", toggleTheme);
   </script>
+
 </body>
 </html>
