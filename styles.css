@@ -143,3 +143,10 @@ body {
   background: var(--brand-yellow);
   color: var(--brand-navy);
 }
+.hamburger span {
+width: 28px;
+height: 3px;
+background: var(--color-text);
+transition: 0.3s;
+border-radius: 5px;
+}

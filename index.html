@@ -1,21 +1,31 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Visionary Path Group</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-  <!-- Theme Toggle Button -->
+  <!-- THEME TOGGLE BUTTON -->
   <button class="theme-toggle" id="themeBtn">🌙</button>
 
-  <!-- Navigation -->
+  <!-- NAVIGATION -->
   <header class="navbar">
     <div class="logo">Visionary Path Group</div>
-    <nav>
+
+    <!-- Hamburger Button -->
+    <div class="hamburger" id="hamburgerBtn">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <!-- Menu Links -->
+    <nav class="nav-links" id="navLinks">
       <a href="#">Home</a>
       <a href="#">Mission</a>
       <a href="#">Vision</a>
@@ -23,7 +33,7 @@
     </nav>
   </header>
 
-  <!-- Hero Section -->
+  <!-- HERO SECTION -->
   <section class="hero">
     <h1>Empowering Ideas, Building Futures</h1>
     <p>Your journey to growth, innovation, and leadership starts here.</p>
@@ -31,6 +41,9 @@
   </section>
 
   <script>
+    /* ------------------------------
+       Light/Dark Theme Toggle
+    ------------------------------ */
     const themeBtn = document.getElementById("themeBtn");
 
     function toggleTheme() {
@@ -39,6 +52,18 @@
     }
 
     themeBtn.addEventListener("click", toggleTheme);
+
+
+    /* ------------------------------
+       Hamburger Menu Toggle
+    ------------------------------ */
+    const hamburgerBtn = document.getElementById("hamburgerBtn");
+    const navLinks = document.getElementById("navLinks");
+
+    hamburgerBtn.addEventListener("click", () => {
+      navLinks.classList.toggle("open");
+      hamburgerBtn.classList.toggle("active");
+    });
   </script>
 
 </body>
