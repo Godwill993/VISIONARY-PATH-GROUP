@@ -6,16 +6,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Visionary Path Group</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
 
   <!-- THEME TOGGLE BUTTON -->
-  <button class="theme-toggle" id="themeBtn">🌙</button>
+  <button class="theme-toggle" id="themeBtn"><b>Dark</b></button>
 
   <!-- NAVIGATION -->
   <header class="navbar">
-    <div class="logo">Visionary Path Group</div>
+    <div class="logo"><img class="logo-image" src="file_0000000093e071f4bdae2a372af90100.png" alt=""></div>
 
     <!-- Hamburger Button -->
     <div class="hamburger" id="hamburgerBtn">
@@ -35,9 +36,15 @@
 
   <!-- HERO SECTION -->
   <section class="hero">
-    <h1>Empowering Ideas, Building Futures</h1>
+    <div class="text-path">
+       <h1>Empowering Ideas, Building Futures</h1>
     <p>Your journey to growth, innovation, and leadership starts here.</p>
     <button class="cta">Get Started</button>
+    </div>
+    <div class="image-path">
+      <img class="hero-img" src="1757830551177.jpeg" alt="Visionary Path Group">
+    </div>
+   
   </section>
 
   <script>
@@ -48,7 +55,7 @@
 
     function toggleTheme() {
       const isDark = document.documentElement.classList.toggle("dark");
-      themeBtn.textContent = isDark ? "☀️" : "🌙";
+      themeBtn.textContent = isDark ? "Light" : "Dark";
     }
 
     themeBtn.addEventListener("click", toggleTheme);
@@ -63,6 +70,29 @@
     hamburgerBtn.addEventListener("click", () => {
       navLinks.classList.toggle("open");
       hamburgerBtn.classList.toggle("active");
+      const isOpen = navLinks.classList.contains('open');
+      navLinks.style.overflow = 'hidden';
+      navLinks.style.height = 'fit-content';
+     
+
+      if (isOpen) {
+        navLinks.style.maxHeight = navLinks.scrollHeight + 'px';
+        navLinks.style.opacity = '1';
+        navLinks.style.pointerEvents = 'auto';
+        navLinks.style.overflow = 'visible';
+        navLinks.style.display = 'flex';
+        navLinks.style.flexDirection = 'column';
+        navLinks.style.alignItems = 'center';
+        navLinks.style.justifyContent = 'center';
+        navLinks.style.transition = 'max-height 0.3s ease-in-out, opacity 0.3s ease-in-out';
+        
+        navLinks.setAttribute('aria-expanded', 'true');
+      } else {
+        navLinks.style.maxHeight = '0';
+        navLinks.style.opacity = '0';
+        navLinks.style.pointerEvents = 'none';
+        navLinks.setAttribute('aria-expanded', 'false');
+      }
     });
   </script>
 
