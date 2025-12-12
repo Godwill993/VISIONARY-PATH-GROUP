@@ -37,7 +37,7 @@
   <!-- HERO SECTION -->
   <section class="hero">
     <div class="text-path">
-       <h1>Empowering Ideas, Building Futures</h1>
+       <h1>VISIONARY PATH GROUP</h1>
     <p>Your journey to growth, innovation, and leadership starts here.</p>
     <button class="cta">Get Started</button>
     </div>
@@ -71,28 +71,7 @@
       navLinks.classList.toggle("open");
       hamburgerBtn.classList.toggle("active");
       const isOpen = navLinks.classList.contains('open');
-      navLinks.style.overflow = 'hidden';
-      navLinks.style.height = 'fit-content';
-     
-
-      if (isOpen) {
-        navLinks.style.maxHeight = navLinks.scrollHeight + 'px';
-        navLinks.style.opacity = '1';
-        navLinks.style.pointerEvents = 'auto';
-        navLinks.style.overflow = 'visible';
-        navLinks.style.display = 'flex';
-        navLinks.style.flexDirection = 'column';
-        navLinks.style.alignItems = 'center';
-        navLinks.style.justifyContent = 'center';
-        navLinks.style.transition = 'max-height 0.3s ease-in-out, opacity 0.3s ease-in-out';
-        
-        navLinks.setAttribute('aria-expanded', 'true');
-      } else {
-        navLinks.style.maxHeight = '0';
-        navLinks.style.opacity = '0';
-        navLinks.style.pointerEvents = 'none';
-        navLinks.setAttribute('aria-expanded', 'false');
-      }
+    
     });
   </script>
 
